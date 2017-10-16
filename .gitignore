@@ -1,2 +1,4 @@
 .idea/
 emailfix.sh
+dist/
+node_modules/

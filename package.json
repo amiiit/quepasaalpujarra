@@ -2,8 +2,14 @@
   "name": "quepasaalpujarra",
   "version": "0.0.1",
   "description": "Todo que pasa en la Appujarra",
-  "main": "index.js",
   "repository": "git@github.com:amiiit/quepasaalpujarra.git",
   "author": "Amit Jakubowicz <jakubowicz.amit@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "raw-build": "rm -rf dist && mkdir dist && cp -r src/* dist/ && cp -r root/* dist/",
+    "ghpages": "node scripts/ghpages.js"
+  },
+  "devDependencies": {
+    "gh-pages": "^1.0.0"
+  }
 }
