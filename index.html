@@ -1,52 +1,16 @@
+
 <!DOCTYPE html>
-
-
 <html>
-
-
 <head>
+  <title>
+    Quepasa Alpujarra
+  </title>
 
-    <title>Quepasa Alpujarra
-    </title>
-    <link rel="stylesheet" type="text/css"
-          href="raw.css">
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 
-
-    <meta http-equiv="Content-Type"
-          content="text/html;charset=utf-8">
-
-    <script>
-      window.addEventListener('load', function () {
-        var calIframe = document.createElement('iframe')
-        calIframe.src =
-          'https://calendar.google.com/calendar/embed?src=eventos%40quepasaalpujarra.com&ctz=Europe/Madrid&hl=es'
-        calIframe.id = 'calendar-iframe'
-        calIframe.width = '99%'
-        calIframe.height = '99%'
-        calIframe.frameborder = 0
-
-        document.getElementById('calendar-wrapper').appendChild(calIframe)
-        calIframe.addEventListener('load', function () {
-          calIframe.classList.add('loaded')
-          calIframe.scrolling = 'no'
-          document.getElementById('calendar-wrapper').classList.add('loaded')
-          document.getElementById('spinner-wrapper').remove()
-        })
-      })
-
-    </script>
 </head>
 
 <body>
-<div class="app-wrapper">
-    <h3>que pasa en la alpujarra?</h3>
-    <div id="calendar-wrapper">
-
-    </div>
-</div>
-<div id="spinner-wrapper">
-    <div class="loading-spinner"></div>
-</div>
-
-</body>
+  <h1>que pasa en la alpujarra?</h1>
+<iframe src="https://calendar.google.com/calendar/embed?src=eventos%40quepasaalpujarra.com&ctz=Europe/Madrid&hl=es" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe></body>
 </html>
