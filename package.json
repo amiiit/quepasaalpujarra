@@ -5,5 +5,19 @@
   "main": "index.js",
   "repository": "git@github.com:amiiit/quepasaalpujarra.git",
   "author": "Amit Jakubowicz <jakubowicz.amit@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "raw-build": "rm -rf dist && mkdir dist && cp -r src/* dist/ && cp -r root/* dist/",
+    "build": "webpack",
+    "ghpages": "node scripts/ghpages.js"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "gh-pages": "^1.0.0",
+    "webpack": "^3.7.1"
+  }
 }
