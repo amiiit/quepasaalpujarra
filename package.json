@@ -7,7 +7,8 @@
   "license": "MIT",
   "scripts": {
     "build-raw": "rm -rf dist && mkdir dist && cp -r src/* dist/ && cp -r root/* dist/",
-    "ghpages": "gh-pages -d dist"
+    "ghpages": "gh-pages -d dist",
+    "deploy":"yarn build-raw && yarn ghpages"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
