@@ -1,6 +1,6 @@
 {
   "name": "quepasaalpujarra",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Todo que pasa en la Appujarra",
   "repository": "git@github.com:amiiit/quepasaalpujarra.git",
   "author": "Amit Jakubowicz <jakubowicz.amit@gmail.com>",
@@ -8,7 +8,7 @@
   "scripts": {
     "build-raw": "rm -rf dist && mkdir dist && cp -r src/* dist/ && cp -r root/* dist/",
     "ghpages": "gh-pages -d dist",
-    "deploy":"npm version patch && yarn build-raw && yarn ghpages"
+    "deploy": "npm version patch && yarn build-raw && yarn ghpages"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
