@@ -16,10 +16,18 @@
           content="text/html;charset=utf-8">
 
     <script>
+      var calLinks = [
+        'en.spain%23holiday%40group.v.calendar.google.com',
+        'eventos%40quepasaalpujarra.com'
+      ]
+
+      var srcPart = calLinks.map(function(calUrl){
+        return 'src='+calUrl
+      }).join('&')
       window.addEventListener('load', function () {
         var calIframe = document.createElement('iframe')
         calIframe.src =
-          'https://calendar.google.com/calendar/embed?src=eventos%40quepasaalpujarra.com&ctz=Europe/Madrid&hl=es'
+          'https://calendar.google.com/calendar/embed?&ctz=Europe/Madrid&hl=es&' + srcPart
         calIframe.id = 'calendar-iframe'
         calIframe.width = '99%'
         calIframe.height = '99%'
