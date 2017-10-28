@@ -8,12 +8,14 @@ body {
     line-height: 1.15;
     font-family: Arial, serif;
     color: #3498db;
+    background: whitesmoke;
 }
 
 .app-wrapper {
     background: white;
     padding: 0 14px;
     box-sizing: border-box;
+    position: absolute;
 }
 
 .header {

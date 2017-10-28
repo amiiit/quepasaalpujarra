@@ -1,17 +1,8 @@
 <!DOCTYPE html>
-
-
 <html>
-
-
 <head>
-
     <title>Quepasa Alpujarra
     </title>
-    <link rel="stylesheet" type="text/css"
-          href="raw.css">
-
-
     <meta http-equiv="Content-Type"
           content="text/html;charset=utf-8">
 
@@ -21,8 +12,8 @@
         'eventos%40quepasaalpujarra.com'
       ]
 
-      var srcPart = calLinks.map(function(calUrl){
-        return 'src='+calUrl
+      var srcPart = calLinks.map(function (calUrl) {
+        return 'src=' + calUrl
       }).join('&')
       window.addEventListener('load', function () {
         var calIframe = document.createElement('iframe')
@@ -48,15 +39,23 @@
 <body>
 <div class="app-wrapper">
     <header class="header">
-        <div class="title">Qué pasa en la alpujarra?</div>
+        <div class="title">Qué pasa en la alpujarra</div>
+        <div class="more-details">
+            <div data-detail="info">De qué se trata?</div>
+            <div data-detail="add-event">Como publicar mi evento?</div>
+        </div>
         <div class="lauguage-selector">
-            <div x-data-language="en" class="language-option">EN</div>
-            <div x-data-language="es" class="language-option">ES</div>
+            <div data-language="en" class="language-option">EN</div>
+            <div data-language="es" class="language-option">ES</div>
         </div>
     </header>
     <div id="calendar-wrapper">
 
     </div>
+</div>
+<div id="popup-wrapper" class="opened">
+    <div class="close-button">X</div>
+    <div class="popup-content">lorem ipsul</div>
 </div>
 <div id="spinner-wrapper">
     <div class="loading-spinner"></div>

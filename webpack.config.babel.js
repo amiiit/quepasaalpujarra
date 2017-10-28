@@ -5,7 +5,7 @@ import path from 'path'
 
 export default {
   entry: {
-    app: './src/application/index.jsx',
+    app: './src/app.js',
   },
   output: {
     path: path.resolve(__dirname, 'dist/'),
@@ -18,7 +18,7 @@ export default {
     rules: [
       {
         test: /.jsx?$/,
-        loaders: ['react-hot-loader/webpack', 'babel-loader'],
+        loaders: ['babel-loader'],
         exclude: /node_modules/,
       },
       {
@@ -31,11 +31,9 @@ export default {
     new HtmlWebpackPlugin({
       template: './src/index.html',
       filename: 'index.html',
-    }),
-    new webpack.HotModuleReplacementPlugin({}),
+    })
   ],
   devServer: {
-    hot: true, // hot module replacement. Depends on HotModuleReplacementPlugin
   },
   devtool: 'eval-source-map',
 }

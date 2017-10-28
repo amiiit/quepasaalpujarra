@@ -9,6 +9,7 @@
     "build-raw": "rm -rf dist && mkdir dist && cp -r src/* dist/ && cp -r root/* dist/",
     "build": "webpack",
     "ghpages": "gh-pages -d dist",
+    "start": "webpack-dev-server",
     "deploy": "npm version patch && yarn build-raw && yarn ghpages"
   },
   "devDependencies": {

@@ -1,0 +1,26 @@
+#popup-wrapper {
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255,255,255,.5);
+
+  .popup-content {
+    background: white;
+    top: 2vw;
+    bottom: 2vw;
+    left: 2vw;
+    right: 2vw;
+    box-sizing: border-box;
+    position: absolute;
+  }
+  .close-button {
+    position: absolute;
+    z-index: 1;
+    right: calc(4% + 24px);
+    top: calc(4% + 24px);
+    cursor: pointer;
+  }
+}
