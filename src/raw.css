@@ -11,11 +11,31 @@ body {
 }
 
 .app-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     background: white;
+    padding: 0 14px;
+    box-sizing: border-box;
+}
 
+.header {
+    display: flex;
+    flex-direction: row;
+    height: 48px;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+
+.title {
+    align-self: center;
+}
+
+.lauguage-selector {
+    display: flex;
+    flex-direction: row;
+}
+.language-option {
+    margin-left: 14px;
+    cursor: pointer;
 }
 
 #calendar-iframe {
@@ -26,6 +46,7 @@ body {
     display: none;
     min-width: 800px;
     min-height: 800px;
+    height: calc(90% - 48px);
 }
 #calendar-wrapper.loaded {
     display: inherit;

@@ -29,8 +29,8 @@
         calIframe.src =
           'https://calendar.google.com/calendar/embed?&ctz=Europe/Madrid&hl=es&' + srcPart
         calIframe.id = 'calendar-iframe'
-        calIframe.width = '99%'
-        calIframe.height = '99%'
+        calIframe.width = '100%'
+        calIframe.height = '100%'
         calIframe.frameborder = 0
 
         document.getElementById('calendar-wrapper').appendChild(calIframe)
@@ -47,7 +47,13 @@
 
 <body>
 <div class="app-wrapper">
-    <h3>que pasa en la alpujarra?</h3>
+    <header class="header">
+        <div class="title">Qué pasa en la alpujarra?</div>
+        <div class="lauguage-selector">
+            <div x-data-language="en" class="language-option">EN</div>
+            <div x-data-language="es" class="language-option">ES</div>
+        </div>
+    </header>
     <div id="calendar-wrapper">
 
     </div>
