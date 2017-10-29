@@ -1,0 +1,19 @@
+#header {
+  display: flex;
+  flex-direction: row;
+  height: 48px;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+
+  .lauguage-selector {
+    display: flex;
+    flex-direction: row;
+  }
+  .language-option {
+    margin-left: 14px;
+    cursor: pointer;
+  }
+
+}
+

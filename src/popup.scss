@@ -1,4 +1,11 @@
 #popup-wrapper {
+  display: none;
+  &.opened {
+    display: block;
+  }
+}
+
+#popup-wrapper {
   z-index: 10;
   position: fixed;
   top: 0;
