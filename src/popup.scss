@@ -23,6 +23,13 @@
     box-sizing: border-box;
     position: absolute;
   }
+
+  .popup-section {
+    &.hidden {
+      display: none;
+    }
+  }
+
   .close-button {
     position: absolute;
     z-index: 1;

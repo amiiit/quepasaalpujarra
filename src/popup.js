@@ -20,8 +20,15 @@ export default class Popup {
 
   open(contentId) {
     this.dom.wrapper.classList.add('opened')
-    this.dom.content.innerHTML = `<h2>${contentId}</h2>`
     document.body.addEventListener('keydown', this.handleKeyDown)
+    this.dom.content.querySelectorAll('.popup-section').forEach(section => {
+      if (section.classList.contains(contentId)){
+        section.classList.remove('hidden')
+      } else {
+        section.classList.add('hidden')
+      }
+    })
+
   }
 
   close() {
