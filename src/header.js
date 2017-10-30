@@ -13,5 +13,8 @@ export default class Header {
         this.props.onDetailsClick(detailsElement.getAttribute('data-detail'))
       })
     })
+
+
+
   }
 }

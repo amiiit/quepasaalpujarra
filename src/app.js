@@ -16,10 +16,23 @@ class App {
         this.openDetailsPopup(detailsId)
       }
     })
+
+    this.openDetailsPopup('add-event')
+    this.setLanguage('en')
   }
 
   openDetailsPopup(detailsId) {
     this.popup.open(detailsId)
+  }
+
+  setLanguage(lang){
+    document.body.querySelectorAll(`[class*='i18n-']`).forEach(langElem => {
+      if (langElem.classList.contains(`i18n-${lang}`)){
+        langElem.classList.add('active')
+      } else {
+        langElem.classList.remove('active')
+      }
+    })
   }
 }
 

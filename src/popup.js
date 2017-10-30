@@ -28,12 +28,13 @@ export default class Popup {
         section.classList.add('hidden')
       }
     })
-
+    document.body.classList.add('noscroll')
   }
 
   close() {
     this.dom.wrapper.classList.remove('opened')
     document.body.removeEventListener('keydown', this.handleKeyDown)
+    document.body.classList.remove('noscroll')
   }
 
 }

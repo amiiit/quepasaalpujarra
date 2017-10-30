@@ -12,29 +12,43 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(255,255,255,.5);
+  background-color: rgba(0,0,0,.2);
 
-  .popup-content {
-    background: white;
+  .popup {
+    background: rgb(250, 250, 250);
     top: 2vw;
     bottom: 2vw;
     left: 2vw;
     right: 2vw;
     box-sizing: border-box;
     position: absolute;
+    box-shadow: inset 1px 1px 0 rgba(0,0,0,.1), inset 0 -1px 0 rgba(0,0,0,.07);
+  }
+  .popup-content {
+    height: 100%;
+    width: 100%;
+    overflow: scroll;
   }
 
   .popup-section {
     &.hidden {
       display: none;
     }
+    h1 {
+
+    }
+    padding: 48px;
   }
 
   .close-button {
     position: absolute;
     z-index: 1;
-    right: calc(4% + 24px);
-    top: calc(4% + 24px);
+    right: 32px;
+    top: 32px;
     cursor: pointer;
   }
+}
+
+@media (max-width: 340px){
+
 }
