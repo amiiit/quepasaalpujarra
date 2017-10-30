@@ -14,10 +14,12 @@ class App {
       el: document.getElementById('header'),
       onDetailsClick: (detailsId) => {
         this.openDetailsPopup(detailsId)
+      },
+      onLanguageChange: languageId => {
+        this.setLanguage(languageId)
       }
     })
 
-    this.openDetailsPopup('add-event')
     this.setLanguage('en')
   }
 
@@ -26,6 +28,7 @@ class App {
   }
 
   setLanguage(lang){
+    debugger;
     document.body.querySelectorAll(`[class*='i18n-']`).forEach(langElem => {
       if (langElem.classList.contains(`i18n-${lang}`)){
         langElem.classList.add('active')

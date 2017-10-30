@@ -14,6 +14,12 @@ export default class Header {
       })
     })
 
+    this.dom.languageSelector.querySelectorAll('[data-language]').forEach(languageElement => {
+      languageElement.addEventListener('click', () => {
+        this.props.onLanguageChange(languageElement.getAttribute('data-language'))
+      })
+    })
+
 
 
   }
