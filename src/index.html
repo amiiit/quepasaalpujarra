@@ -20,11 +20,14 @@
         calIframe.src =
           'https://calendar.google.com/calendar/embed?&ctz=Europe/Madrid&hl=es&' + srcPart
         calIframe.id = 'calendar-iframe'
-        calIframe.width = '100%'
-        calIframe.height = '100%'
+
+        var calWrapper = document.getElementById('calendar-wrapper')
+
+        calIframe.width = window.innerWidth * 0.96 + 'px';
+        calIframe.height = Math.max(window.innerHeight, 800) + 'px';
         calIframe.frameborder = 0
 
-        document.getElementById('calendar-wrapper').appendChild(calIframe)
+        calWrapper.appendChild(calIframe)
         calIframe.addEventListener('load', function () {
           calIframe.classList.add('loaded')
           calIframe.scrolling = 'no'
@@ -37,30 +40,60 @@
 </head>
 
 <body>
-<header id="header">
-    <div class="title">Qué pasa en la alpujarra</div>
-    <div class="sub-title">
-        <p class="i18n-en">The event calendar</p>
-        <p class="i18n-es">Calendario de eventos</p>
-    </div>
-    <div id="more-details">
-        <div class="detail-options">
-            <div data-detail="info" class="i18n-es">De qué se trata?</div>
-            <div data-detail="info" class="i18n-en">What is this about?</div>
-
-            <div data-detail="add-event" class="i18n-es">Como publicar mi evento?</div>
-            <div data-detail="add-event" class="i18n-en">How can I add my event?</div>
-        </div>
-    </div>
-    <div class="lauguage-selector">
-        <div data-language="en" class="language-option">EN</div>
-        <div data-language="es" class="language-option">ES</div>
-    </div>
-</header>
 <div class="app-wrapper">
+    <header id="header">
+        <div class="title">Qué pasa en la alpujarra</div>
+        <div class="sub-title">
+            <p class="i18n-en">The event calendar</p>
+            <p class="i18n-es">Calendario de eventos</p>
+        </div>
+        <div id="more-details">
+            <div class="detail-options">
+                <div data-detail="info" class="i18n-es">De qué se trata?</div>
+                <div data-detail="info" class="i18n-en">What is this about?</div>
 
+                <div data-detail="add-event" class="i18n-es">Como publicar mi evento?</div>
+                <div data-detail="add-event" class="i18n-en">How can I add my event?</div>
+            </div>
+        </div>
+        <div class="lauguage-selector">
+            <div data-language="en" class="language-option">EN</div>
+            <div data-language="es" class="language-option">ES</div>
+        </div>
+    </header>
+
+    <div id="spinner-wrapper">
+        <!-- By Sam Herbert (@sherb), for everyone. More @ http://goo.gl/7AJzbL -->
+        <svg viewBox="0 0 38 38" xmlns="http://www.w3.org/2000/svg" stroke="#e3e9ff" style="height: 42%; width: 42%;">
+            <g fill="none" fill-rule="evenodd">
+                <g transform="translate(1 1)" stroke-width="2">
+                    <circle stroke-opacity=".5" cx="18" cy="18" r="18"/>
+                    <path d="M36 18c0-9.94-8.06-18-18-18">
+                        <animateTransform
+                                attributeName="transform"
+                                type="rotate"
+                                from="0 18 18"
+                                to="360 18 18"
+                                dur="1s"
+                                repeatCount="indefinite"/>
+                    </path>
+                </g>
+            </g>
+        </svg>
+    </div>
     <div id="calendar-wrapper">
 
+    </div>
+    <div id="footer">
+        <p>
+            Made with &hearts; in the alpujarra
+        </p>
+        <p>
+            This is an open source project, hosted on GitHub
+        </p>
+        <p data-detail="legal">
+            Legal
+        </p>
     </div>
 </div>
 <div id="popup-wrapper">
@@ -167,11 +200,14 @@
                     ante sodales. Nam id nulla sit amet velit luctus ultricies a a sapien.
                 </p>
             </div>
+            <div class="popup-section legal i18n-en">
+                Legal
+            </div>
+            <div class="popup-section legal i18n-es">
+                Legal
+            </div>
         </div>
     </div>
-</div>
-<div id="spinner-wrapper">
-    <div class="loading-spinner"></div>
 </div>
 
 </body>

@@ -10,6 +10,7 @@ export default class Popup {
     this.dom.close.addEventListener('click', () => {
       this.close()
     })
+
   }
 
   handleKeyDown = (e) => {

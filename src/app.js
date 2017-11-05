@@ -1,7 +1,10 @@
 import './app.scss'
 import Popup from './popup.js'
 import Header from './header.js'
+import spinnerSvg from '../assets/spinner.svg'
+import Footer from './footer.js'
 
+console.log('spinnerSvg',spinnerSvg)
 class App {
   init() {
     this.popup = new Popup({
@@ -12,23 +15,25 @@ class App {
 
     this.header = new Header({
       el: document.getElementById('header'),
-      onDetailsClick: (detailsId) => {
-        this.openDetailsPopup(detailsId)
-      },
+      onDetailsClick: this.openDetailsPopup,
       onLanguageChange: languageId => {
         this.setLanguage(languageId)
       }
     })
 
+    this.footer = new Footer({
+      el: document.getElementById('footer'),
+      onDetailsClick: this.openDetailsPopup,
+    })
+
     this.setLanguage('en')
   }
 
-  openDetailsPopup(detailsId) {
+  openDetailsPopup = (detailsId) => {
     this.popup.open(detailsId)
   }
 
   setLanguage(lang){
-    debugger;
     document.body.querySelectorAll(`[class*='i18n-']`).forEach(langElem => {
       if (langElem.classList.contains(`i18n-${lang}`)){
         langElem.classList.add('active')
@@ -42,6 +47,5 @@ class App {
 const app = new App()
 window.addEventListener('load', () => {
   app.init()
-
 })
 
