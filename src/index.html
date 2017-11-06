@@ -8,8 +8,8 @@
 
     <script>
       var calLinks = [
+        'eventos%40quepasaalpujarra.com',
         'en.spain%23holiday%40group.v.calendar.google.com',
-        'eventos%40quepasaalpujarra.com'
       ]
 
       var srcPart = calLinks.map(function (calUrl) {
@@ -48,17 +48,19 @@
             <p class="i18n-es">Calendario de eventos</p>
         </div>
         <div id="more-details">
-            <div class="detail-options">
-                <div data-detail="info" class="i18n-es">De qué se trata?</div>
-                <div data-detail="info" class="i18n-en">What is this about?</div>
+            <div data-detail="info" class="i18n-en">What is this about?</div>
+            <div data-detail="add-event" class="i18n-en">How can I add my event?</div>
+            <div data-detail="contact" class="i18n-en">Contact</div>
 
-                <div data-detail="add-event" class="i18n-es">Como publicar mi evento?</div>
-                <div data-detail="add-event" class="i18n-en">How can I add my event?</div>
-            </div>
+            <div data-detail="info" class="i18n-es">De qué se trata?</div>
+            <div data-detail="add-event" class="i18n-es">Como publicar mi evento?</div>
+            <div data-detail="contact" class="i18n-es">Contacto</div>
+
+
         </div>
         <div class="lauguage-selector">
-            <div data-language="en" class="language-option">EN</div>
-            <div data-language="es" class="language-option">ES</div>
+            <div class="clickable" data-language="en" class="language-option">EN</div>
+            <div class="clickable" data-language="es" class="language-option">ES</div>
         </div>
     </header>
 
@@ -85,15 +87,15 @@
 
     </div>
     <div id="footer">
-        <p>
-            Made with &hearts; in the alpujarra
-        </p>
-        <p>
-            This is an open source project, hosted on GitHub
-        </p>
-        <p data-detail="legal">
+        <div>
+            Made with &hearts; in the Alpujarra
+        </div>
+        <div>
+            <a target='_blank' href="https://github.com/amiiit/quepasaalpujarra/">This is an open source project, hosted on GitHub</a>
+        </div>
+        <div data-detail="legal">
             Legal
-        </p>
+        </div>
     </div>
 </div>
 <div id="popup-wrapper">
@@ -201,10 +203,26 @@
                 </p>
             </div>
             <div class="popup-section legal i18n-en">
-                Legal
+                Que pasa Alpujarra is a voluntary project initiated and run by volunteers with the only goal to allow
+                people to publish their events and for others to find information about events. We are not affiliated
+                with any of the event holder, nor we take any guarantee or responsibility to any of the events. If you
+                feel that any of the information presented here is offending, malicious or faked please contact us and
+                let us know.
             </div>
             <div class="popup-section legal i18n-es">
                 Legal
+            </div>
+
+            <div class="popup-section contact i18n-en">
+                Contact
+                Que pasa Alpujarra is a voluntary project initiated and run by volunteers with the only goal to allow
+                people to publish their events and for others to find information about events. We are not affiliated
+                with any of the event holder, nor we take any guarantee or responsibility to any of the events. If you
+                feel that any of the information presented here is offending, malicious or faked please contact us and
+                let us know.
+            </div>
+            <div class="popup-section contact i18n-es">
+                Contact
             </div>
         </div>
     </div>

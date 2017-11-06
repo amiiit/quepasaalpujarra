@@ -2,12 +2,23 @@
 
 body {
     margin: 0;
-    line-height: 1.15;
-
-    font-family: Arial, sans-serif;
+    font-family: Verdana, Geneva, sans-serif;
     color: #3498db;
     &.noscroll {
         overflow: hidden;
+    }
+    a, .clickable, [data-detail], [data-language] {
+        cursor: pointer;
+        &:hover {
+            opacity: .8;
+            text-decoration: underline;
+        }
+    }
+    a {
+        text-decoration: none;
+        &:visited {
+            color: inherit;
+        }
     }
 }
 

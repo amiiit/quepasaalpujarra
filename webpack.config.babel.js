@@ -39,5 +39,4 @@ export default {
   ],
   devServer: {
   },
-  devtool: 'eval-source-map',
 }
