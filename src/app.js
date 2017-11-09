@@ -4,7 +4,6 @@ import Header from './header.js'
 import spinnerSvg from '../assets/spinner.svg'
 import Footer from './footer.js'
 
-console.log('spinnerSvg',spinnerSvg)
 class App {
   init() {
     this.popup = new Popup({
