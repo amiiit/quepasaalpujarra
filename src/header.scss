@@ -5,7 +5,7 @@
   & > div:not(:first-child) {
     padding-left: 12px
   }
-  height: 48px;
+  min-height: 48px;
   margin-bottom: 12px;
   width: 100%;
   background-color: #e3e9ff;

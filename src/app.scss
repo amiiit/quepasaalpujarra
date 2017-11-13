@@ -33,9 +33,9 @@ body {
 
 #calendar-wrapper {
     display: none;
-    min-width: 800px;
     min-height: 800px;
     height: calc(90% - 48px);
+    margin-bottom: 8px;
 }
 #calendar-wrapper.loaded {
     display: flex;
