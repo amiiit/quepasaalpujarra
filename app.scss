@@ -1,0 +1,56 @@
+@import './spinner.scss';
+
+body {
+    margin: 0;
+    font-family: Verdana, Geneva, sans-serif;
+    color: #3498db;
+    &.noscroll {
+        overflow: hidden;
+    }
+    a, .clickable, [data-detail], [data-language] {
+        cursor: pointer;
+        &:hover {
+            opacity: .8;
+            text-decoration: underline;
+        }
+    }
+    a {
+        text-decoration: none;
+        &:visited {
+            color: inherit;
+        }
+    }
+    p {
+        font-size: 16px;
+    }
+}
+
+.app-wrapper {
+    background: white;
+    box-sizing: border-box;
+}
+
+#calendar-iframe {
+    border: none;
+}
+
+#calendar-wrapper {
+    display: none;
+    min-height: 800px;
+    height: calc(90% - 48px);
+    margin-bottom: 8px;
+}
+#calendar-wrapper.loaded {
+    display: flex;
+    justify-content: center;
+    flex: 1;
+    width: 100%;
+    padding: 0 5px;
+    align-self: baseline;
+}
+
+.i18n-en, .i18n-es {
+  &:not(.active){
+      display: none;
+  }
+}

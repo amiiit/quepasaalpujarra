@@ -1,59 +1,207 @@
 <!DOCTYPE html>
-
-
 <html>
-
-
 <head>
-
     <title>Quepasa Alpujarra
     </title>
-    <link rel="stylesheet" type="text/css"
-          href="raw.css">
-
-
     <meta http-equiv="Content-Type"
           content="text/html;charset=utf-8">
-
-    <script>
-      var calLinks = [
-        'en.spain%23holiday%40group.v.calendar.google.com',
-        'eventos%40quepasaalpujarra.com'
-      ]
-
-      var srcPart = calLinks.map(function(calUrl){
-        return 'src='+calUrl
-      }).join('&')
-      window.addEventListener('load', function () {
-        var calIframe = document.createElement('iframe')
-        calIframe.src =
-          'https://calendar.google.com/calendar/embed?&ctz=Europe/Madrid&hl=es&' + srcPart
-        calIframe.id = 'calendar-iframe'
-        calIframe.width = '99%'
-        calIframe.height = '99%'
-        calIframe.frameborder = 0
-
-        document.getElementById('calendar-wrapper').appendChild(calIframe)
-        calIframe.addEventListener('load', function () {
-          calIframe.classList.add('loaded')
-          calIframe.scrolling = 'no'
-          document.getElementById('calendar-wrapper').classList.add('loaded')
-          document.getElementById('spinner-wrapper').remove()
-        })
-      })
-
-    </script>
 </head>
 
 <body>
 <div class="app-wrapper">
-    <h3>que pasa en la alpujarra?</h3>
+    <header id="header">
+        <div class="title"><a href="/">Qué pasa en la alpujarra</a></div>
+        <div class="sub-title">
+            <p class="i18n-en">The event calendar</p>
+            <p class="i18n-es">Calendario de eventos</p>
+        </div>
+        <div id="more-details">
+            <div data-detail="info" class="i18n-en">What is this about?</div>
+            <div data-detail="add-event" class="i18n-en">How can I add my event?</div>
+            <div data-detail="contact" class="i18n-en">Contact</div>
+
+            <div data-detail="info" class="i18n-es">De qué se trata?</div>
+            <div data-detail="add-event" class="i18n-es">Como publicar mi evento?</div>
+            <div data-detail="contact" class="i18n-es">Contacto</div>
+
+
+        </div>
+        <div class="lauguage-selector">
+            <div class="clickable" data-language="en" class="language-option">EN</div>
+            <div class="clickable" data-language="es" class="language-option">ES</div>
+        </div>
+    </header>
+
+    <div id="spinner-wrapper">
+        <!-- By Sam Herbert (@sherb), for everyone. More @ http://goo.gl/7AJzbL -->
+        <svg viewBox="0 0 38 38" xmlns="http://www.w3.org/2000/svg" stroke="#e3e9ff" style="height: 42%; width: 42%;">
+            <g fill="none" fill-rule="evenodd">
+                <g transform="translate(1 1)" stroke-width="2">
+                    <circle stroke-opacity=".5" cx="18" cy="18" r="18"/>
+                    <path d="M36 18c0-9.94-8.06-18-18-18">
+                        <animateTransform
+                                attributeName="transform"
+                                type="rotate"
+                                from="0 18 18"
+                                to="360 18 18"
+                                dur="1s"
+                                repeatCount="indefinite"/>
+                    </path>
+                </g>
+            </g>
+        </svg>
+    </div>
     <div id="calendar-wrapper">
 
     </div>
+    <div id="footer">
+        <div>
+            Made with &hearts; in the Alpujarra
+        </div>
+        <div>
+            <a target='_blank' href="https://github.com/amiiit/quepasaalpujarra/">This is an open source project, hosted
+                on GitHub</a>
+        </div>
+        <div data-detail="legal">
+            Legal
+        </div>
+    </div>
 </div>
-<div id="spinner-wrapper">
-    <div class="loading-spinner"></div>
+<div id="popup-wrapper">
+    <div class="popup">
+        <div class="popup-content">
+            <div class="close-button">&#10006;</div>
+            <div class="popup-section info i18n-en">
+                <h1>
+                    Que Pasa Alpujarra - the community calendar
+                </h1>
+                <p>
+                    There's a lot going on here, so we've decided to create a place where people can get informed about
+                    what's going on in our area, publicly and without any need to log in anywhere. We, as many others
+                    are getting a lot of valuable information from Órgiva Massive on facebook and we see this page as
+                    an addition to the activity happening over there. What we also realized however, is that information
+                    about events tends to get lost in the feed and that it's really hard to find some post you saw last
+                    week about a concert happening in the coming weekend. So we ask people to post their event here
+                    <i>additionally</i> to their post on their favorite platforms, just to make sure that others can
+                    find this easily.
+                </p>
+                <p>
+                    This is the initial edition of Que Pasa Alpujarra and we sure hope it's going to be used, as all
+                    feedback from people about this was very positive. We have many ideas how to improve this calendar
+                    and we intend to implement them as time allows and of course, if we see that this actually
+                    contributes to the social and cultural life here. If you got more ideas, or if you'd like to help
+                    please contact us over our email: contacto@quepasaalpujarra.com
+
+                </p>
+            </div>
+            <div class="popup-section info i18n-es">
+                <h1>
+                    Algúna informatión
+                </h1>
+                <p>
+                    Aquí os damos alguna información sobre este calendario
+                    Maecenas nec vulputate lectus. Maecenas urna lorem, ullamcorper a nunc sed, consectetur tristique
+                    dui.
+                    Vestibulum sed facilisis felis. Nunc viverra malesuada ligula nec imperdiet. Praesent quis
+                    condimentum
+                    magna. Pellentesque tempor quis urna at facilisis. Proin hendrerit metus vitae nulla suscipit, nec
+                    consequat
+                    nibh cursus.
+                </p>
+            </div>
+            <div class="popup-section add-event i18n-en">
+                <h1>
+                    How to add an event?
+                </h1>
+                <p>
+                    Adding an event to our local events calendar is just like sending us a calendar invitation from your
+                    favorite calendar program to <b>eventos@quepasaalpujarra.com</b>. It doesn't matter what calendar
+                    you are using, whether it's a mac or android calendar, google or microsoft or any other kind of
+                    software. Most calendars people use today are supporting the iCal format which is a kind of
+                    invitation
+                    sent over email that computers can understand. If you are using any digital calendar, it's most
+                    probably using the iCal format. If any doubts just search the internet for "how to send a calendar
+                    invite"
+                </p>
+                <p>
+                    Once we receive the event in our mailbox we will accept it as soon as possible, so that people can
+                    see, and hopefully participate in your event.
+                </p>
+            </div>
+            <div class="popup-section add-event i18n-es">
+                <h1>
+                    Como añadir un evento?
+                </h1>
+                <p>
+                    Nullam condimentum lectus a sapien vulputate, vitae tempus magna volutpat. Nulla malesuada, dolor
+                    quis
+                    feugiat dictum, magna arcu porta nibh, sed malesuada nibh erat non urna. Integer ac pretium lectus.
+                    Nam
+                    in
+                    dapibus velit. Nullam tempor turpis mattis libero malesuada interdum. Nullam pulvinar ipsum aliquam,
+                    congue
+                    magna vel, cursus risus. Cras consectetur consequat tellus, vel scelerisque justo luctus eu. Sed
+                    tempus
+                    neque eget lacus fringilla volutpat. Maecenas lacus libero, dictum sed ex tempus, scelerisque
+                    ultrices
+                    ante.
+                    Maecenas tristique, neque nec varius varius, neque lorem gravida lectus, sed faucibus ligula sapien
+                    ac
+                    quam.
+                    Donec luctus tincidunt lacus ac tincidunt. Integer luctus, nibh a pellentesque aliquam, massa neque
+                    luctus
+                    urna, nec mattis purus diam in elit.
+                </p>
+                <p>
+                    Vestibulum bibendum ante et velit gravida, at semper metus vehicula. Praesent sapien est, tempus in
+                    porttitor in, sollicitudin id nisi. Ut nec porttitor magna. Pellentesque at metus quis mi bibendum
+                    egestas
+                    semper sit amet tortor. Ut sem risus, faucibus in turpis at, tincidunt vestibulum mauris. Phasellus
+                    placerat
+                    dolor euismod, hendrerit risus aliquam, euismod risus. Morbi varius libero quis ipsum consequat, eu
+                    lacinia
+                    ante sodales. Nam id nulla sit amet velit luctus ultricies a a sapien.
+                </p>
+            </div>
+            <div class="popup-section legal i18n-en">
+                <p>
+                    <i>Que pasa Alpujarra</i> is a voluntary project initiated and run by volunteers with the only goal
+                    to
+                    allow people to publish their events and for others to find information about events. We are not
+                    affiliated with any of the event holder, nor we take any guarantee or responsibility to any of the
+                    events. If you feel that any of the information presented here is offending, malicious or faked
+                    please contact us and let us know. We reserve the right to remove events due to reasons we might, or
+                    might not formulate in the future. Removing events from this calendar is is something we try to
+                    avoid but we will do this if we feel that a certain event or a set of events ruins the calendar for
+                    everybody else.
+                </p>
+                <h3>Privacy</h3>
+                <p>
+                    We respect the right for privacy of the visitors of this site and therefore collect no data at all
+                    from any one visiting this site. In the future we might implement a traffic counter to tell us how
+                    many people are actually using this site, but we'll do this without tracking our users. Needless to
+                    say we do not sell any data to no one because we don't simply don't collect any. With that being
+                    said we at the moment are still using google's implementation for managing the actual calendar, so
+                    we can't guarantee that not responsible to any personal data that google might be tracking. For a
+                    safe and and private browsing
+                    we recommend using <a href="https://www.ghostery.com/" target="_blank">the ghostery plugin</a> for
+                    all major browsers.
+                </p>
+            </div>
+            <div class="popup-section legal i18n-es">
+                Legal
+            </div>
+
+            <div class="popup-section contact i18n-en">
+                Contact us over our email: <a
+                    href="mailto:contact@quepasaalpujarra.com">contacto@quepasaalpujarra.com</a>
+            </div>
+            <div class="popup-section contact i18n-es">
+                Mándanos un email a: <a
+                    href="mailto:contact@quepasaalpujarra.com">contacto@quepasaalpujarra.com</a>
+            </div>
+        </div>
+    </div>
 </div>
 
 </body>
