@@ -10,7 +10,7 @@
     "build": "webpack",
     "ghpages": "gh-pages -d dist",
     "start": "webpack-dev-server",
-    "deploy": "npm version patch && yarn build-raw && cp -r root/* dist/ && yarn ghpages"
+    "deploy": "rm -rf dist/ && yarn build && cp -r root/* dist/ && yarn ghpages"
   },
   "devDependencies": {
     "@types/jest": "^21.1.1",
