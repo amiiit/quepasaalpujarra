@@ -7,10 +7,10 @@ export default class Popup {
     this.dom.wrapper = el
     this.dom.close = this.dom.wrapper.getElementsByClassName('close-button')[0]
     this.dom.content = this.dom.wrapper.getElementsByClassName('popup-content')[0]
-    this.dom.close.addEventListener('click', () => {
+    const clickClosingElements = [this.dom.wrapper, this.dom.close]
+    clickClosingElements.forEach(i => i.addEventListener('click', () => {
       this.close()
-    })
-
+    }))
   }
 
   handleKeyDown = (e) => {

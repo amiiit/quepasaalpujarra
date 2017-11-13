@@ -1,33 +1,42 @@
 #popup-wrapper {
   display: none;
   &.opened {
-    display: block;
+    display: flex;
   }
 }
 
 #popup-wrapper {
   z-index: 10;
   position: fixed;
+  justify-content: center;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0,0,0,.2);
+  background-color: rgba(0,0,0,.75);
 
   .popup {
+    border-radius: 6px;
     background: rgb(250, 250, 250);
-    top: 2vw;
-    bottom: 2vw;
-    left: 2vw;
-    right: 2vw;
+    width: 74vw;
     box-sizing: border-box;
     position: absolute;
     box-shadow: inset 1px 1px 0 rgba(0,0,0,.1), inset 0 -1px 0 rgba(0,0,0,.07);
+    align-self: center;
+    justify-self: center;
   }
   .popup-content {
     height: 100%;
     width: 100%;
     overflow: auto;
+
+    h1 {
+      padding-bottom: 6px;
+    }
+
+    p {
+      line-height: 1.35em;
+    }
   }
 
   .popup-section {
