@@ -808,6 +808,10 @@ var Popup = function () {
         _this.close();
       });
     });
+
+    this.dom.content.addEventListener('click', function (e) {
+      e.stopPropagation();
+    });
   }
 
   Popup.prototype.open = function open(contentId) {
