@@ -11,6 +11,10 @@ export default class Popup {
     clickClosingElements.forEach(i => i.addEventListener('click', () => {
       this.close()
     }))
+
+    this.dom.content.addEventListener('click', (e) => {
+      e.stopPropagation()
+    })
   }
 
   handleKeyDown = (e) => {
@@ -23,7 +27,7 @@ export default class Popup {
     this.dom.wrapper.classList.add('opened')
     document.body.addEventListener('keydown', this.handleKeyDown)
     this.dom.content.querySelectorAll('.popup-section').forEach(section => {
-      if (section.classList.contains(contentId)){
+      if (section.classList.contains(contentId)) {
         section.classList.remove('hidden')
       } else {
         section.classList.add('hidden')
